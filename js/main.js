@@ -89,7 +89,7 @@
       var an = date.getFullYear();
       var heure = date.getHours();
       var minutes = date.getMinutes();
-      var idee = new IdeeModel({title: $("#title").val(), text: $("#idee").val(), date: jour+"/"+mois+"/"+an+" à "+heure+":"+minutes, author: "Admin", count: 0});
+      var idee = new IdeeModel({title: $("#title").val(), text: $("#idee").val(), date: jour+"/"+mois+"/"+an+" à "+heure+":"+minutes, author: login, count: 0});
       ideeList.add(idee);
 
       $("#title").val("");
