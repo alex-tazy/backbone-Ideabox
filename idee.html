@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+</head>
+<body>
+
+  <script id="result-template" type="text/template">
+    <h3><b><%= title %></b><small> par <%= author %> <i>le <%= date %></i></small></h3>
+    <p><%= text %></p>
+    <p>Nombre de votes: <%= count %>. <a href="#" class="vote">Voter pour cette idée !</a></p>
+    <hr>
+  </script>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-targer="#main-nav" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Menu</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Page 1</a></li>
+          <li><a href="#">Page 2</a></li>
+          <li><a href="#">Page 3</a></li>
+        </ul>
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" placeholder="test" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-default">submit</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Boite à Idées</h1>
+    <hr>
+    <h2 class="text-left">Login as: admin</h2>
+    <div class="col-md-8">
+      <form id="form-idea" class="form-horizontal">
+        <div class="form-group">
+          <label class="sr-only" for="title">Titre</label>
+        <input type="text" class="form-control" id="title" placeholder="Title..." required>
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="idee">Idée</label>
+        <textarea class="form-control" id="idee" placeholder="Idée" required></textarea>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Soumettre</button>
+      </div>
+      </form>
+    </div>
+      <hr>
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

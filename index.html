@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>Connectez-vous</h1>
+    </div>
+    <form id="form-connection" action="auth.php" method="post">
+      <div class="form-group">
+        <label for="login" class="sr-only">Login</label>
+        <input type="text" id="login" class="form-control" placeholder="Login" required>
+      </div>
+      <div class="form-group">
+        <label for="pwd" class="sr-only">Password</label>
+        <input type="password" id="pwd" class="form-control" placeholder="Password" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Log In</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- <script src="js/connection.js"></script> -->
+  <script>
+    (function($) {
+        $("#form-connection").submit(function(e) {
+          var $login = $("#login");
+          var $pwd = $("#pwd");
+
+          if($login.val() != "" && $pwd.val() != "") {
+            console.log("non vide");
+            $.ajax({
+              url: "auth.php",
+              data: {
+                login: $login.val(),
+                pwd: $pwd.val()
+              },
+              dataType: "json",
+              method: "post",
+              success: function(msg) {
+                console.log(msg);
+              }
+            });
+          } else {
+            alert("Erreur dans l'identification");
+          }
+
+          e.preventDefault();
+          return false;
+        });
+    })(jQuery);
+  </script>
+</body>
+</html>
