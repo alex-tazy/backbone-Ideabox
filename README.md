@@ -2,28 +2,13 @@
 
 This README would normally document whatever steps are necessary to get your application up and running.
 
-### What is this repository for? ###
+### Installation ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+Cette version ne necessite pas de BDD.
+Vous devez vous connecter avec le login alex et le pwd alex.
+Aucun enregistrement dans une BDD.
+Ne pas Actualiser la page, pour cette version
 
-### How do I get set up? ###
+### Auteur ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+Alexandre Cahay - http://alexandre-cahay.fr
