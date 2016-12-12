@@ -1,0 +1,16 @@
+{
+  "name": "ideebox",
+  "version": "1.0.1",
+  "description": "Un super projet",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Backbone",
+    "Cahay"
+  ],
+  "author": "Alexandre Cahay <contact@alexandre-cahay.fr>",
+  "license": "MIT",
+}

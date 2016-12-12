@@ -1,29 +1,20 @@
 <?php
-  $bdd = array(
-    'alex' => "alex",
-    'alexis' => 'buon',
-    'luc' => 'marie',
-    'nicolas' => 'filliard',
-    'nicolas' => 'pertays'
-  );
+$login = $_POST['login'];
+$pwd = $_POST['pwd'];
 
-  foreach($bdd as $loginBDD => $pwdBDD){
-    $login = $_POST['login'];
-    $pwd = $_POST['pwd'];
+$pdo = new PDO("mysql:dbname=testbackbone;host=localhost", "root", "");
+$sql = "SELECT * FROM users WHERE prenom = :login AND nom = :pwd";
+$statement = $pdo->prepare($sql);
+$statement->bindParam(':login', $login);
+$statement->bindParam(':pwd', $pwd);
+$statement->execute();
+$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+if (count($results) > 0) {
+    session_start();
+    $_SESSION['user'] = $login;
+    echo json_encode(array("status" => true));
+} else {
+    echo json_encode(array("status" => false));
+}
 
-    if(isset($login) && isset($pwd)) {
-      if($login == $loginBDD && $pwd == $pwdBDD) {
-        session_start();
-        $_SESSION['user'] = $login;
-        echo json_encode(array("status" => true));
-      } else {
-        if($login != $loginBDD)
-          echo json_encode(array("status" => false, "e" => "login"));
-        if($pwd != $pwdBDD)
-          echo json_encode(array("status" => false, "e" => "pwd"));
-      }
-    } else {
-      echo json_encode(array("status" => false));
-    }
-  }
 ?>

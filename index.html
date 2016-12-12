@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+    <script src="js/Backbone-localstorage.js"></script>
 </head>
 <body>
-  <div class="container" id="connection">
+<div class="container" id="connection">
     <div class="page-header">
-      <h1>Connectez-vous</h1>
+        <h1>Connectez-vous</h1>
     </div>
     <form id="form-connection" autocomplete="off">
-      <div class="form-group">
-        <label for="login" class="sr-only">Login</label>
-        <input type="text" id="login" class="form-control" placeholder="Login" required>
-        <div class="alert alert-danger hidden" id="alert-login" role="alert"><b>Oh flute !</b>Vous avez entré un mauvais login</div>
-      </div>
-      <div class="form-group">
-        <label for="pwd" class="sr-only">Password</label>
-        <input type="password" id="pwd" class="form-control" placeholder="Password" required>
-        <div class="alert alert-danger hidden" id="alert-pwd" role="alert"><b>Oh flute !</b>UVous avez entré un mauvais mot de passe</div>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Log In</button>
-      </div>
-      <div class="alert alert-danger hidden" id="alert" role="alert"><b>Oh flute !</b>Une erreur est survenue lors de l'enregistrement</div>
+        <div class="form-group">
+            <label for="login" class="sr-only">Login</label>
+            <input type="text" id="login" class="form-control" placeholder="Login" required>
+        </div>
+        <div class="form-group">
+            <label for="pwd" class="sr-only">Password</label>
+            <input type="password" id="pwd" class="form-control" placeholder="Password" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Log In</button>
+        </div>
+        <div class="alert alert-danger hidden" id="alert-login" role="alert"><b>Oh flute !</b> Vous avez entré un
+            mauvais login ou un mauvais mot de passe
+        </div>
+        <div class="alert alert-danger hidden" id="alert" role="alert"><b>Oh flute !</b> Une erreur est survenue lors de
+            l'enregistrement
+        </div>
     </form>
-  </div>
+</div>
 
-  <div class="container" id="contenu"></div>
-
-  <script src="js/connection.js"></script>
+<div class="container" id="contenu"></div>
+<script src="js/connection.js"></script>
 </body>
 </html>
